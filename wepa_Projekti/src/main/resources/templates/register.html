@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title>Register user</title>
+    </head>
+    <body>
+        <h1 th:text="Register">form</h1>
+        <form th:action="@{/mainpage}" th:object="${userAccount}" method="POST">
+            <table>
+                <tr>
+                    <td>Username: </td>
+                    <td><input type="text" th:field="*{username}" /></td>
+                    <td th:if="${#fields.hasErrors('username')}" th:errors="*{username}">SSN Virheviesti</td>
+                </tr>
+                <tr>
+                    <td>Your visible name*: </td>
+                    <td><input type="text" th:field="*{visibleName}" /></td>
+                    <td th:if="${#fields.hasErrors('visibleName')}" th:errors="*{visibleName}">Name Virheviesti</td>
+                </tr>
+                <tr>
+                    <td>Password: </td>
+                    <td><input type="password" th:field="*{password}" /></td>
+                    <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Email Virheviesti</td>
+                </tr>
+                <tr>
+                    <td>Confirm Password: </td>
+                    <td><input type="password" value="" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Add" onclick="submitform()"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <a th:href="@{/login.html}">login</a>
+
+        <br /><br />
+        <b>Tää ei oikeasti toimi! Sorit! Päätin tehdä toiminnallisuutta pääsääntöisesti rajapinta-tasolla
+            Joten tämä jäi nyt ihan telineisiin. Rajapintaohjetiedoston löydät menemällä <a href="/">aloitussivulle</a>
+        </b>
+        <script th:inline="javascript"> var contextRoot = /*[[@{/}]]*/ '';</script>
+        <script th:src="@{/javascript/registration.js}" defer></script>
+    </body>
+</html>

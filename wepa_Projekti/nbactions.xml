@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-RUNNERI</actionName>
+            <displayName>RUNNERI</displayName>
+            <goals>
+                <goal>spring-boot:run</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-CLEANER</actionName>
+            <displayName>CLEANER</displayName>
+            <goals>
+                <goal>clean</goal>
+            </goals>
+        </action>
+    </actions>

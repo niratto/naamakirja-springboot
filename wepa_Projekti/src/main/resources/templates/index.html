@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Hello world</title>
+    </head>
+    <body>
+
+        <h1 th:text="${'Hello ' + message}">Hello world</h1>
+
+        <a th:href="@{/login}">login</a>
+        <br />
+        <a th:href="@{/user/registration}">register</a>
+        <hr />
+
+        <p>Rekisteröintitoteutus jäi vähän telineisiin aikatauluhaasteiden vuoksi!!!<br />
+            Paras tapa rekisteröidä käyttäjä on käyttää suoraan Rest-rajapintaa<br /><br />
+            POST http://[palvelin]:[portti]/rest/registration<br />
+            Content-Type: application/json<br />
+            <br />
+            {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;"username": "[käyttäjän uid... en jostain syystä tehnyt tästä s-postia]",<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;"visibleName": "[Nimi, jonka käyttäjä näkee sovelluksessa]",<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;"password": "[salasana]",<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;"friendRequests": [],<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;"friends": []<br />
+            }<br />
+            <br />
+            Jos tämä ei toimi Herokussa (ei jää aikaa paljon testata), niin tätä voi myös ns. säälikokeilla lokaalissa<br />
+            Ympäristössä ilmaisemalla koodin <a href="https://github.com/niratto/naamakirja-springboot/">Githubista</a> ja laittamalla Netbeansiin projektiksi (tai haluamaasi IDEen!
+            <br /><br />
+            Kaikki REST-kutsut koestettuna (ja myös omaan koestukseen) <a href="/rest-kutsuja.rest">täältä</a>.<br />
+            Kälissä ei siis oikein toimi muu kuin pari ulkoasullista juttua + sisään- ja uloskirjautumiset.<br />
+            Käli osaa kyllä näyttää postaukset, kaverit, kaveripyynnöt (lähetetyt ja myös saapuvat)
+            <br /><br />
+            Sovellukseen on nyt tehty käyttäjiä testi, testi2, testi3 ja testi4. Kaikilla salasana 'salasana'
+        </p>
+    </body>
+</html>
